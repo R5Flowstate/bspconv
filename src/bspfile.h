@@ -1,8 +1,21 @@
 #pragma once
 #include "studio.h"
 
-// these are the target BSP constants
-#define BSPVERSION 47
+// v51 = S21 client (flags=1, default). v47 = S3 dedi (flags=0, -dedi).
+#define BSPVERSION_S21 51
+#define BSPVERSION_S3  47
+#define BSPVERSION BSPVERSION_S21
+
+// Supported source BSP versions:
+// - v37: Titanfall 2; passes through rbsp_37.cpp which currently produces a
+//        v47 product. Final header bump to v51 happens in ConvertBSP.
+// - v47: Pre-S7 r5sdk-compiled; identity pass-through with header bump to v51.
+// - v48-v50: header bump only. Entity partitions stay in their v121 form.
+// - v51: identity pass-through (verified against a reference map).
+// - v52: header 52->51, GAME_LUMP dgamelump_t.version 0x34->0x33,
+//        LUMP_UNKNOWN_57 (0x39) zeroed/cleared. Every other lump unchanged.
+// Note: v51/v52 maps may use either 40-byte or 44-byte LightProbes;
+// detection is automatic and the 44-byte format passes through unchanged.
 #define IDBSPHEADER (('P'<<24)+('S'<<16)+('B'<<8)+'r')
 
 
@@ -65,7 +78,7 @@ enum lumptype_t
     LUMP_WORLD_LIGHTS = 0x0036,
     LUMP_WORLD_LIGHT_PARENT_INFOS = 0x0037,
     LUMP_UNUSED_56 = 0x0038,
-    LUMP_UNUSED_57 = 0x0039,
+    LUMP_UNUSED_57 = 0x0039, // UNKNOWN_57 in v52+ (Season 21+) - zeroed during conversion
     LUMP_UNUSED_58 = 0x003A,
     LUMP_UNUSED_59 = 0x003B,
     LUMP_UNUSED_60 = 0x003C,

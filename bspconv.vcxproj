@@ -30,9 +30,11 @@
     </ClCompile>
     <ClCompile Include="src\stltools.cpp" />
     <ClCompile Include="src\versions\rbsp_51.cpp" />
+    <ClCompile Include="src\versions\rbsp_37.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\binstream.h" />
+    <ClInclude Include="src\tf2_structs.h" />
     <ClInclude Include="src\bspfile.h" />
     <ClInclude Include="src\CommandLine.h" />
     <ClInclude Include="src\entity_partition.h" />
@@ -97,10 +99,10 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(ProjectDir)src;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)src;$(ProjectDir)src\collision;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>$(ProjectDir)src;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)src;$(ProjectDir)src\collision;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
