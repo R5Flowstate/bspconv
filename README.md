@@ -3,7 +3,7 @@
 Converts Respawn rBSP map files between versions. This fork targets the
 Season 21 client: default output is **v51**.
 
-Agents view included: CLAUDE.md
+Agents view included: AGENTS.md
 
 ## Usage
 
