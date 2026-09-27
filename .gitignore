@@ -356,3 +356,6 @@ MigrationBackup/
 
 # Local map conversion scratch (never ship)
 workspace/
+
+# Machine-local tool paths
+tools/tf2common/paths.json

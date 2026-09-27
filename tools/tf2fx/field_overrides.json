@@ -1,0 +1,12 @@
+{
+ "render models": {
+  "why": "S21 payload has no exposure override: the four bools follow the skin/activity/sequence strings directly. All 56 paired S21 instances hold 0,0,0,1 at 964..967 (update lighting defaults to 1).",
+  "fields": {
+   "exposure counteraction override": null,
+   "attach to control point 0": 964,
+   "attach position to control point 0": 965,
+   "attach orientation to control point 0": 966,
+   "update lighting while moving": 967
+  }
+ }
+}

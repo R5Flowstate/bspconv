@@ -1,0 +1,5 @@
+{
+    "repakExe": "path/to/repak.exe",
+    "rsxExe": "path/to/rsx.exe",
+    "shaderDisassembler": "path/to/shader disassembler.exe"
+}
